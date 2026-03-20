@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-windy-darker text-gray-100;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-windy-blue via-windy-cyan to-windy-darkblue;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-windy-dark via-windy-darker to-black;
+  }
+}
