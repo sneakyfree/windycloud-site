@@ -6,7 +6,7 @@ export default function AgentHosting() {
 
   const tiers = [
     { name: 'Starter Agent', price: '+$5', period: '/mo', cpu: '1 vCPU', ram: '512 MB', features: ['Shared resources', 'Basic integrations', 'Web dashboard', 'Community support'] },
-    { name: 'Pro Agent', price: '+$15', period: '/mo', cpu: '2 vCPU', ram: '2 GB', features: ['Dedicated resources', 'GPU access for STT/TTS', 'Full SSH terminal', 'All integrations', 'Priority support'], highlight: true },
+    { name: 'Pro Agent', price: '+$15', period: '/mo', cpu: '2 vCPU', ram: '2 GB', features: ['Dedicated resources', 'GPU access for voice processing', 'Full SSH terminal', 'All integrations', 'Priority support'], highlight: true },
     { name: 'Business Agent', price: '+$30', period: '/mo', cpu: '4 vCPU', ram: '4 GB', features: ['Priority everything', 'Dedicated GPU time', 'Team agents (10)', 'Custom integrations', 'SLA guarantee'] },
   ];
 
@@ -37,7 +37,7 @@ export default function AgentHosting() {
                 { icon: '🔒', text: 'Sovereign — your data, your agent, your rules. Not OpenAI\'s. Not Google\'s. Yours.' },
                 { icon: '💻', text: 'Full terminal access for power users. Beautiful dashboard for everyone else.' },
                 { icon: '🌐', text: 'Accessible from anywhere — your-name.windycloud.com. Secured by Cloudflare.' },
-                { icon: '⚡', text: 'GPU-accelerated — cloud STT, voice clone, translation, all co-located with your agent' },
+                { icon: '⚡', text: 'GPU-accelerated — cloud transcription, voice clone, translation, all co-located with your agent' },
                 { icon: '🔗', text: 'Connected to everything — Telegram, Discord, Slack, email, calendar, smart home' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">

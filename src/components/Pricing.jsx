@@ -92,7 +92,7 @@ const billingOptions = [
 function WhatMakesUsDifferent() {
   const points = [
     { icon: '🧠', title: 'Not just files. Intelligence.', desc: 'Store AI models, voice clones, soul files, training data, and transcriptions — not just documents. WindyCloud understands what it\'s storing.' },
-    { icon: '⚡', title: 'Cloud compute built in.', desc: 'Other clouds store. We compute. Run STT, train models, generate clones — right where your data lives. Zero egress fees.' },
+    { icon: '⚡', title: 'Cloud compute built in.', desc: 'Other clouds store. We compute. Run transcription, train models, generate clones — right where your data lives. Zero egress fees.' },
     { icon: '🔒', title: 'Sovereign by design.', desc: 'Your AI identity is the most personal data that exists. End-to-end encryption. Zero-knowledge option. GDPR, SOC 2, HIPAA ready.' },
     { icon: '🌐', title: 'The entire Windy ecosystem.', desc: 'WindyWord transcriptions → WindyCloud storage → WindyClone voice → WindyChat conversations. One account. One data layer. Everything connected.' },
   ];
