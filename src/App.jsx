@@ -4,6 +4,7 @@ import Features from './components/Features'
 import HowItWorks from './components/HowItWorks'
 import VaultPreview from './components/VaultPreview'
 import Pricing from './components/Pricing'
+import AgentHosting from './components/AgentHosting'
 import Ecosystem from './components/Ecosystem'
 import Security from './components/Security'
 import Testimonials from './components/Testimonials'
@@ -20,6 +21,7 @@ function App() {
       <HowItWorks />
       <VaultPreview />
       <Pricing />
+      <AgentHosting />
       <Ecosystem />
       <Security />
       <Testimonials />
