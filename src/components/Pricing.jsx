@@ -208,7 +208,7 @@ function PricingCard({ plan, index, billing }) {
 export default function Pricing() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [billing, setBilling] = useState('monthly');
+  const [billing, setBilling] = useState('lifetime');
 
   return (
     <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-black gradient-mesh">
