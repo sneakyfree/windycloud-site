@@ -6,42 +6,50 @@ const features = [
   {
     icon: "🎤",
     title: "Voice Model Vault",
-    description: "Store your WindyClone voice models, training data, and avatars. Version history ensures you never lose your digital identity."
+    description: "47 custom voice models. 12 language variants. One vault. Your WindyClone voice lives here — versioned, encrypted, and ready the instant you need it.",
+    accent: "from-blue-500/20 to-cyan-500/20"
   },
   {
     icon: "📝",
-    title: "Transcription Archive",
-    description: "Every WindyWord transcription automatically backed up. Search across years of conversations, meetings, and voice notes."
+    title: "Transcription Memory",
+    description: "Every word you've ever spoken to WindyWord — searchable, timestamped, permanent. Three years of meetings? Find any sentence in under a second.",
+    accent: "from-purple-500/20 to-pink-500/20"
   },
   {
     icon: "🧬",
-    title: "Soul File Storage",
-    description: "Your AI personality, preferences, and learning history. The most personal data you'll ever create."
+    title: "Soul File Sanctuary",
+    description: "Your AI personality. Your preferences. Your learning history. The most intimate data you'll ever create deserves a fortress. This is it.",
+    accent: "from-emerald-500/20 to-teal-500/20"
   },
   {
     icon: "👤",
     title: "Clone Data Sync",
-    description: "Avatar models, personality files, and clone training data synced across all devices. Your digital twin, everywhere."
+    description: "Your digital twin follows you everywhere. Open your laptop in Tokyo, your phone in Paris — your avatar is already there. Always ready. Always yours.",
+    accent: "from-orange-500/20 to-red-500/20"
   },
   {
-    icon: "🔄",
-    title: "Cross-Device Sync",
-    description: "One account, every Windy app. WindyWord transcriptions, WindyChat history, WindyTraveler packs — all in sync."
-  },
-  {
-    icon: "💾",
-    title: "Model Vault",
-    description: "Download and own your 2,000+ specialized translation models. Instant access, no HuggingFace dependency."
+    icon: "🌐",
+    title: "2,000+ Translation Models",
+    description: "WindyTranslate's entire catalog — one click to download them all to your vault. Own your models. Don't rent access to them.",
+    accent: "from-indigo-500/20 to-blue-500/20"
   },
   {
     icon: "⚡",
-    title: "Cloud Compute",
-    description: "Need more power? Overflow STT/TTS processing to WindyCloud compute. Pay only for what you use."
+    title: "Overflow Compute",
+    description: "Your local GPU maxed out? WindyCloud catches the overflow. Speech-to-text, text-to-speech, clone training — seamless cloud burst when you need the power.",
+    accent: "from-yellow-500/20 to-orange-500/20"
   },
   {
-    icon: "📚",
-    title: "Version History",
-    description: "Roll back to any previous version of your models, transcriptions, or soul files. Your data, your timeline."
+    icon: "🔄",
+    title: "Universal Sync",
+    description: "One account. Five apps. Every device. WindyWord transcriptions, WindyChat history, WindyTraveler packs — they move with you like a second heartbeat.",
+    accent: "from-cyan-500/20 to-blue-500/20"
+  },
+  {
+    icon: "⏳",
+    title: "Time Travel",
+    description: "Every version of every file. That voice model from six months ago that sounded perfect? Roll back in one click. Your data has a timeline. Use it.",
+    accent: "from-pink-500/20 to-purple-500/20"
   }
 ];
 
@@ -54,12 +62,17 @@ function FeatureCard({ feature, index }) {
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-windy-dark/50 backdrop-blur-sm border border-windy-blue/20 rounded-xl p-6 hover:border-windy-blue/50 transition-all duration-300 hover:shadow-lg hover:shadow-windy-blue/10"
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="group relative bg-windy-dark/50 backdrop-blur-sm border border-windy-blue/10 rounded-xl p-6 hover:border-windy-blue/40 transition-all duration-500 card-shimmer vault-inner-glow"
     >
-      <div className="text-4xl mb-4">{feature.icon}</div>
-      <h3 className="text-xl font-bold mb-2 text-windy-blue">{feature.title}</h3>
-      <p className="text-gray-400">{feature.description}</p>
+      {/* Hover gradient overlay */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${feature.accent} opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-500`} />
+      
+      <div className="relative">
+        <div className="text-4xl mb-4">{feature.icon}</div>
+        <h3 className="text-xl font-bold mb-3 text-white group-hover:text-windy-blue transition-colors duration-300">{feature.title}</h3>
+        <p className="text-gray-400 leading-relaxed text-sm">{feature.description}</p>
+      </div>
     </motion.div>
   );
 }
@@ -69,7 +82,7 @@ export default function Features() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+    <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 bg-black gradient-mesh">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -78,13 +91,14 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Everything Your AI Needs,
-            <span className="gradient-text"> In One Place</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Not Another Dropbox.
+            <br />
+            <span className="gradient-text">The Cloud That Understands AI.</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Purpose-built cloud storage for the Windy ecosystem. Not generic file storage — 
-            intelligent infrastructure that understands your AI data.
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Generic storage treats your voice models like spreadsheets.
+            WindyCloud knows a soul file from a sound wave — and protects both like they matter. <span className="text-white">Because they do.</span>
           </p>
         </motion.div>
 

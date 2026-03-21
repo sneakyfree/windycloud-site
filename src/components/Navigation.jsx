@@ -27,16 +27,17 @@ export default function Navigation() {
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-windy-darker/95 backdrop-blur-lg border-b border-windy-blue/20 shadow-lg' 
+          ? 'bg-windy-darker/95 backdrop-blur-lg border-b border-windy-blue/10 shadow-lg shadow-black/20' 
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#hero" className="flex items-center space-x-2">
-            <span className="text-2xl">☁️</span>
+          <a href="#hero" className="flex items-center space-x-2 group">
+            <span className="text-2xl group-hover:scale-110 transition-transform duration-200">☁️</span>
             <span className="text-xl font-bold gradient-text">WindyCloud</span>
+            <span className="hidden sm:inline-flex text-[10px] font-bold px-1.5 py-0.5 bg-windy-cyan/10 text-windy-cyan border border-windy-cyan/20 rounded-full ml-1 tracking-wider">EARLY ACCESS</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -45,17 +46,19 @@ export default function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-windy-blue transition-colors duration-200"
+                className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
               >
                 {link.name}
               </a>
             ))}
-            <a
+            <motion.a
               href="#pricing"
-              className="px-6 py-2 bg-gradient-to-r from-windy-blue to-windy-darkblue text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-windy-blue/50 transition-all duration-300"
+              className="px-5 py-2 bg-gradient-to-r from-windy-blue to-windy-darkblue text-white rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-windy-blue/30 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Get Started
-            </a>
+              Get Started Free
+            </motion.a>
           </div>
 
           {/* Mobile menu button */}
@@ -79,14 +82,14 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-windy-blue/20 py-4"
+            className="md:hidden border-t border-windy-blue/10 py-4 bg-windy-darker/95 backdrop-blur-lg"
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-2 text-gray-300 hover:text-windy-blue transition-colors duration-200"
+                className="block py-2 text-gray-400 hover:text-white transition-colors duration-200"
               >
                 {link.name}
               </a>
@@ -96,7 +99,7 @@ export default function Navigation() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="block mt-4 px-6 py-2 bg-gradient-to-r from-windy-blue to-windy-darkblue text-white rounded-lg font-semibold text-center"
             >
-              Get Started
+              Get Started Free
             </a>
           </motion.div>
         )}

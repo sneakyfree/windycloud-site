@@ -2,79 +2,114 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const apps = [
+const flywheelSteps = [
   {
-    name: "WindyWord.ai",
+    brand: "WindyWord.ai",
     icon: "🎤",
-    tagline: "Voice-to-Text Intelligence",
-    description: "Transcribe meetings, conversations, and voice notes with AI-powered accuracy. Your transcriptions automatically backup to WindyCloud.",
+    verb: "You speak.",
+    hook: "Voice-to-text intelligence powered by 2,000+ specialized AI models. Free to start. Your voice becomes data — beautiful, searchable, permanent data.",
+    desire: "Every meeting, every thought, every midnight breakthrough — captured and transcribed with surgical precision.",
     link: "https://windyword.ai",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-blue-500 to-cyan-500",
+    ring: "ring-blue-500/30"
   },
   {
-    name: "WindyClone.ai",
+    brand: "WindyClone.ai",
     icon: "🧬",
-    tagline: "Your Digital Twin",
-    description: "Create your AI avatar from voice data stored in WindyCloud. Voice clone, visual avatar, and personality soul file — all synced.",
+    verb: "You become.",
+    hook: "Your voice becomes your digital twin. Voice clone. Visual avatar. Personality soul file. One button — and suddenly there are two of you.",
+    desire: "Your WindyClone avatar needs a home. Give it the cloud it deserves.",
     link: "https://windyclone.ai",
-    color: "from-purple-500 to-pink-500"
+    color: "from-purple-500 to-pink-500",
+    ring: "ring-purple-500/30"
   },
   {
-    name: "WindyChat.ai",
+    brand: "WindyChat.ai",
     icon: "💬",
-    tagline: "Real-Time Translation",
-    description: "Chat in any language with live AI translation. Conversation history stored on WindyCloud, accessible everywhere.",
+    verb: "You connect.",
+    hook: "Your twin speaks any language. Real-time translated chat, voice, and video — in YOUR voice. Talk to anyone on Earth as yourself.",
+    desire: "Imagine speaking fluent Japanese in a business meeting. In your own voice. That's WindyChat.",
     link: "https://windychat.ai",
-    color: "from-green-500 to-teal-500"
+    color: "from-green-500 to-teal-500",
+    ring: "ring-green-500/30"
   },
   {
-    name: "WindyTraveler.com",
+    brand: "WindyTraveler.com",
     icon: "✈️",
-    tagline: "Your Travel Companion",
-    description: "Offline translation packs, travel guides, and local deals. Download language packs to WindyCloud for instant offline access.",
+    verb: "You explore.",
+    hook: "You travel the world understood. Offline language packs, AI tour guides, local deals, traveler's tools — your complete travel companion.",
+    desire: "Land in any country. Speak the language before your bags hit the carousel.",
     link: "https://windytraveler.com",
-    color: "from-orange-500 to-red-500"
+    color: "from-orange-500 to-red-500",
+    ring: "ring-orange-500/30"
   },
   {
-    name: "WindyTranslate.com",
+    brand: "WindyTranslate.com",
     icon: "🔧",
-    tagline: "The Translation Engine",
-    description: "2,000+ specialized translation models powering every Windy app. Store your favorite models in WindyCloud's model vault.",
+    verb: "The engine.",
+    hook: "2,000+ specialized pair-translation LLMs. The invisible force powering every Windy product. Not generic Google Translate — purpose-built specialists.",
+    desire: "Enterprise API. White-label SDK. The Intel Inside of language AI.",
     link: "https://windytranslate.com",
-    color: "from-indigo-500 to-blue-500"
+    color: "from-indigo-500 to-blue-500",
+    ring: "ring-indigo-500/30"
   }
 ];
 
-function AppCard({ app, index }) {
+function FlywheelCard({ step, index }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-windy-dark/50 backdrop-blur-sm border border-windy-blue/20 rounded-xl p-6 hover:border-windy-blue/50 transition-all duration-300 hover:shadow-lg hover:shadow-windy-blue/20"
+      initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.12 }}
+      className={`group relative bg-windy-dark/40 backdrop-blur-sm border border-windy-blue/10 rounded-2xl p-8 hover:border-windy-blue/30 transition-all duration-500 card-shimmer ring-1 ${step.ring}`}
     >
-      <div className={`absolute inset-0 bg-gradient-to-br ${app.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-[0.06] rounded-2xl transition-opacity duration-500`} />
       
-      <div className="relative">
-        <div className="text-5xl mb-4">{app.icon}</div>
-        <h3 className="text-xl font-bold mb-1">{app.name}</h3>
-        <p className="text-windy-blue text-sm mb-3">{app.tagline}</p>
-        <p className="text-gray-400 text-sm mb-4">{app.description}</p>
+      <div className="relative flex flex-col md:flex-row gap-6">
+        {/* Step number + icon */}
+        <div className="flex-shrink-0 flex items-start gap-4">
+          <div className="text-5xl md:text-6xl font-black text-white/[0.06] leading-none">{String(index + 1).padStart(2, '0')}</div>
+          <div className="text-5xl">{step.icon}</div>
+        </div>
         
-        <a
-          href={app.link}
-          className="inline-flex items-center text-windy-blue hover:text-windy-cyan transition-colors duration-200"
-        >
-          Learn more
-          <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
+        {/* Content */}
+        <div className="flex-1">
+          <div className="flex items-center gap-3 mb-2">
+            <h3 className="text-2xl font-bold text-white">{step.verb}</h3>
+            <span className={`text-sm font-semibold bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>{step.brand}</span>
+          </div>
+          <p className="text-gray-300 mb-3 leading-relaxed">{step.hook}</p>
+          <p className="text-gray-500 text-sm italic mb-4">"{step.desire}"</p>
+          
+          <a
+            href={step.link}
+            className="inline-flex items-center text-sm text-windy-blue/70 hover:text-windy-blue transition-colors group/link"
+          >
+            Explore {step.brand}
+            <svg className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
       </div>
+
+      {/* Connector arrow */}
+      {index < flywheelSteps.length - 1 && (
+        <div className="hidden md:flex justify-center mt-6 -mb-2">
+          <motion.svg
+            className="w-6 h-6 text-windy-blue/30"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            animate={{ y: [0, 4, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </motion.svg>
+        </div>
+      )}
     </motion.div>
   );
 }
@@ -84,8 +119,8 @@ export default function Ecosystem() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="ecosystem" className="py-24 px-4 sm:px-6 lg:px-8 gradient-bg">
-      <div className="max-w-7xl mx-auto">
+    <section id="ecosystem" className="py-24 px-4 sm:px-6 lg:px-8 gradient-bg gradient-mesh">
+      <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -93,41 +128,49 @@ export default function Ecosystem() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            The Windy <span className="gradient-text">Ecosystem</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            One Voice. <span className="gradient-text">Six Products. Infinite Reach.</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-6">
-            WindyCloud is the gravity well at the center of the Windy family. Every app creates data. 
-            All of it lives here.
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
+            It starts with a single word you speak. It ends with your voice reaching every corner of the planet. 
+            Here's how the Windy Empire turns your voice into a superpower — and why <span className="text-white font-medium">WindyCloud is the sun everything orbits</span>.
           </p>
-          <div className="inline-block bg-windy-blue/10 border border-windy-blue/30 rounded-full px-6 py-3">
-            <p className="text-windy-blue font-semibold">
-              ⚡ Better Together — One account, five apps, infinite possibilities
-            </p>
-          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {apps.map((app, index) => (
-            <AppCard key={index} app={app} index={index} />
+        {/* Flywheel story cards */}
+        <div className="space-y-6 mb-16">
+          {flywheelSteps.map((step, index) => (
+            <FlywheelCard key={index} step={step} index={index} />
           ))}
         </div>
 
+        {/* The Sun — WindyCloud */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-gradient-to-r from-windy-blue/10 to-windy-darkblue/10 border border-windy-blue/30 rounded-2xl p-8 text-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative bg-gradient-to-br from-windy-blue/10 via-windy-dark/50 to-windy-darkblue/10 border-2 border-windy-blue/30 rounded-3xl p-10 text-center overflow-hidden"
         >
-          <h3 className="text-2xl font-bold mb-4">The Flywheel Effect</h3>
-          <p className="text-gray-300 max-w-3xl mx-auto">
-            Store your <span className="text-windy-blue">WindyWord</span> transcriptions. 
-            Build your <span className="text-windy-blue">WindyClone</span> avatar. 
-            Chat in <span className="text-windy-blue">WindyChat</span>. 
-            Travel with <span className="text-windy-blue">WindyTraveler</span>. 
-            Every interaction makes your AI smarter. Every app makes the others better. 
-            And it all lives on <span className="text-windy-blue font-semibold">WindyCloud</span>.
-          </p>
+          {/* Background glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-windy-blue/5 to-transparent rounded-3xl" />
+          
+          <div className="relative">
+            <div className="text-6xl mb-4">☁️</div>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              And All of It Lives Here.
+              <br />
+              <span className="gradient-text">On WindyCloud.</span>
+            </h3>
+            <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed mb-6">
+              Every word you speak. Every model you train. Every clone you create. Every conversation in every language. 
+              Every offline pack for every country you'll ever visit. 
+              <span className="text-white font-semibold"> One vault. One account. Yours forever.</span>
+            </p>
+            <p className="text-windy-blue/60 text-sm italic">
+              "The more you use Windy, the more valuable your vault becomes. That's not a lock-in — it's a legacy."
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
