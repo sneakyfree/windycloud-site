@@ -12,7 +12,7 @@ const faqs = [
     answer: "Generic storage treats your voice model like a spreadsheet. WindyCloud understands the difference between a soul file and a sound wave. It knows how to version voice models, sync clone data across devices, burst to cloud compute when your GPU maxes out, and keep your translation models instantly accessible. It's purpose-built infrastructure, not a folder in the sky."
   },
   {
-    question: "Can I store all 2,000+ translation models?",
+    question: "Can I store all 3,500+ translation models?",
     answer: "Every single one. Download WindyTranslate's full catalog to your personal Model Vault with one click. You'll own your copy — no HuggingFace dependency, no re-downloading, works offline. The models load 10x faster from your vault than pulling from HuggingFace, and they're CDN-cached near your location for instant access."
   },
   {
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "How much storage do I really need?",
-    answer: "Starter (50 GB) works for casual WindyWord users and a few voice models. Pro (250 GB) is ideal for creators with a WindyClone avatar, multiple language model packs, and growing transcription archives — this is where most users land. Business (1 TB) suits power users with full model vaults, team clone data, and years of transcription history."
+    answer: "Breeze (100 GB) works for casual WindyWord users and a few voice models. Gale (250 GB) is ideal for creators with a WindyClone avatar, multiple language model packs, and growing transcription archives — this is where most users land. Tempest (1 TB) suits power users with full model vaults, team clone data, and years of transcription history. Tornado (10 TB) is for those with years of video, voice, and clone data."
   },
   {
     question: "What happens if I cancel?",

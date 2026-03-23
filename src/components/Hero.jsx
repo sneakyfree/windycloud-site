@@ -87,7 +87,7 @@ export default function Hero() {
             className="flex flex-wrap justify-center gap-8 md:gap-12 text-center"
           >
             {[
-              { value: "2,000+", label: "AI Models Hosted" },
+              { value: "3,500+", label: "AI Models Hosted" },
               { value: "100+", label: "Languages" },
               { value: "50K+", label: "Transcriptions Daily" },
               { value: "99.9%", label: "Uptime" },

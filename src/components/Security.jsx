@@ -10,8 +10,8 @@ const securityFeatures = [
   },
   {
     icon: "🌐",
-    title: "Cloudflare Global Edge",
-    description: "250+ data centers worldwide. DDoS protection. Sub-50ms latency anywhere on Earth. Your data is fast AND fortress-protected."
+    title: "Global Edge Network",
+    description: "250+ data centers worldwide. DDoS protection. Sub-50ms latency anywhere on Earth. Your data is fast AND fortress-protected. Enterprise-grade infrastructure."
   },
   {
     icon: "🕵️",

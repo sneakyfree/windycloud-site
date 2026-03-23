@@ -29,7 +29,7 @@ const features = [
   },
   {
     icon: "🌐",
-    title: "2,000+ Translation Models",
+    title: "3,500+ Translation Models",
     description: "WindyTranslate's entire catalog — one click to download them all to your vault. Own your models. Don't rent access to them.",
     accent: "from-indigo-500/20 to-blue-500/20"
   },

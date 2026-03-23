@@ -4,11 +4,7 @@ import { useState } from 'react';
 export default function AgentHosting() {
   const [email, setEmail] = useState('');
 
-  const tiers = [
-    { name: 'Starter Agent', price: '+$5', period: '/mo', cpu: '1 vCPU', ram: '512 MB', features: ['Shared resources', 'Basic integrations', 'Web dashboard', 'Community support'] },
-    { name: 'Pro Agent', price: '+$15', period: '/mo', cpu: '2 vCPU', ram: '2 GB', features: ['Dedicated resources', 'GPU access for voice processing', 'Full SSH terminal', 'All integrations', 'Priority support'], highlight: true },
-    { name: 'Business Agent', price: '+$30', period: '/mo', cpu: '4 vCPU', ram: '4 GB', features: ['Priority everything', 'Dedicated GPU time', 'Team agents (10)', 'Custom integrations', 'SLA guarantee'] },
-  ];
+  const tiers = [];
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -36,7 +32,7 @@ export default function AgentHosting() {
                 { icon: '🧠', text: 'Your own Kit Zero — personal AI that knows you, remembers everything, acts on your behalf' },
                 { icon: '🔒', text: 'Sovereign — your data, your agent, your rules. Not OpenAI\'s. Not Google\'s. Yours.' },
                 { icon: '💻', text: 'Full terminal access for power users. Beautiful dashboard for everyone else.' },
-                { icon: '🌐', text: 'Accessible from anywhere — your-name.windycloud.com. Secured by Cloudflare.' },
+                { icon: '🌐', text: 'Accessible from anywhere — your-name.windycloud.com. Enterprise-grade security.' },
                 { icon: '⚡', text: 'GPU-accelerated — cloud transcription, voice clone, translation, all co-located with your agent' },
                 { icon: '🔗', text: 'Connected to everything — Telegram, Discord, Slack, email, calendar, smart home' },
               ].map((item, i) => (
@@ -49,33 +45,19 @@ export default function AgentHosting() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {tiers.map((t, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className={`bg-windy-dark/60 p-6 rounded-xl border-2 ${t.highlight ? 'border-purple-500/40 shadow-lg shadow-purple-500/10' : 'border-gray-800/40'}`}
-            >
-              <h3 className="text-lg font-bold text-white mb-1">{t.name}</h3>
-              <div className="mb-3">
-                <span className="text-3xl font-black gradient-text">{t.price}</span>
-                <span className="text-gray-500 text-sm">{t.period} add-on</span>
-              </div>
-              <div className="flex gap-3 text-xs text-gray-500 mb-4">
-                <span className="px-2 py-1 bg-gray-800/60 rounded">{t.cpu}</span>
-                <span className="px-2 py-1 bg-gray-800/60 rounded">{t.ram}</span>
-              </div>
-              <ul className="space-y-2">
-                {t.features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-2 text-xs text-gray-400">
-                    <svg className="w-3.5 h-3.5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="bg-windy-dark/60 border-2 border-purple-500/30 rounded-xl p-8 mb-12 text-center max-w-2xl mx-auto"
+        >
+          <h3 className="text-2xl font-bold text-white mb-2">🤖 Agent Hosting</h3>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-4">
+            <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-purple-400"></span></span>
+            COMING SOON
+          </div>
+          <p className="text-gray-400 text-sm leading-relaxed">
+            Host your own AI agent on WindyCloud — with your soul file, your memories, your voice clone, and your translation models. 
+            Pricing details will be announced when agent hosting launches.
+          </p>
+        </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-lg mx-auto text-center">
           <p className="text-sm text-gray-400 mb-4">Join the waitlist. Be first to give your AI a home.</p>

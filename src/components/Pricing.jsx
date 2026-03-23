@@ -4,14 +4,14 @@ import { useRef, useState } from 'react';
 
 const plans = [
   {
-    name: "Starter",
+    name: "🌬️ Breeze",
     price: { monthly: "$9", annual: "$7", lifetime: "$149" },
     period: { monthly: "/mo", annual: "/mo", lifetime: "one-time" },
     description: "Your first step into the Windy universe",
     badge: null,
-    storage: "50 GB",
+    storage: "100 GB",
     features: [
-      "50 GB storage",
+      "100 GB storage",
       "Sync across all devices",
       "Model vault access",
       "Version history (30 days)",
@@ -22,7 +22,7 @@ const plans = [
     anchor: null,
   },
   {
-    name: "Pro",
+    name: "💨 Gale",
     price: { monthly: "$19", annual: "$15", lifetime: "$299" },
     period: { monthly: "/mo", annual: "/mo", lifetime: "one-time" },
     description: "For creators serious about their AI",
@@ -30,7 +30,7 @@ const plans = [
     storage: "250 GB",
     features: [
       "250 GB storage",
-      "Everything in Starter, plus:",
+      "Everything in Breeze, plus:",
       "Cloud compute credits",
       "Full API access",
       "Version history (1 year)",
@@ -39,10 +39,10 @@ const plans = [
     ],
     cta: "Start Free Trial",
     highlighted: true,
-    anchor: { competitor: "Dropbox Plus", competitorPrice: "$12/mo", competitorStorage: "2 TB of files", edge: "But Dropbox can\'t store AI models, run compute, sync soul files, or version your voice clones." },
+    anchor: null,
   },
   {
-    name: "Business",
+    name: "⛈️ Tempest",
     price: { monthly: "$49", annual: "$39", lifetime: "$799" },
     period: { monthly: "/mo", annual: "/mo", lifetime: "one-time" },
     description: "For teams building the future",
@@ -50,7 +50,7 @@ const plans = [
     storage: "1 TB",
     features: [
       "1 TB storage",
-      "Everything in Pro, plus:",
+      "Everything in Gale, plus:",
       "Team collaboration (10 seats)",
       "White-label options",
       "99.9% uptime SLA",
@@ -59,18 +59,37 @@ const plans = [
     ],
     cta: "Start Free Trial",
     highlighted: false,
-    anchor: { competitor: "Google One", competitorPrice: "$10/mo for 2 TB", competitorStorage: "2 TB generic", edge: "Google stores files. WindyCloud stores intelligence — models, clones, soul files, compute. Different universe." },
+    anchor: null,
   },
   {
-    name: "Enterprise",
+    name: "🌪️ Tornado",
+    price: { monthly: "$99", annual: "$79", lifetime: "$1,499" },
+    period: { monthly: "/mo", annual: "/mo", lifetime: "one-time" },
+    description: "Years of video, voice, and clones",
+    badge: null,
+    storage: "10 TB",
+    features: [
+      "10 TB storage",
+      "Everything in Tempest, plus:",
+      "Years of video/voice/clone data",
+      "Priority processing",
+      "Advanced analytics",
+      "Extended version history"
+    ],
+    cta: "Start Free Trial",
+    highlighted: false,
+    anchor: null,
+  },
+  {
+    name: "🌀 Hurricane",
     price: { monthly: "Custom", annual: "Custom", lifetime: "Custom" },
     period: { monthly: "", annual: "", lifetime: "" },
-    description: "Unlimited scale. White-glove treatment.",
+    description: "Enterprise scale. White-glove treatment.",
     badge: null,
-    storage: "Unlimited",
+    storage: "Custom",
     features: [
-      "Unlimited storage",
-      "Everything in Business, plus:",
+      "Custom storage",
+      "Everything in Tornado, plus:",
       "Dedicated infrastructure",
       "On-premise deployment",
       "Custom SLA & contracts",
@@ -248,7 +267,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {plans.map((plan, index) => (
             <PricingCard key={index} plan={plan} index={index} billing={billing} />
           ))}

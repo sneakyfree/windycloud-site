@@ -25,7 +25,7 @@ const testimonials = [
     metric: "34% CSAT improvement"
   },
   {
-    quote: "I downloaded all 2,000 WindyTranslate models to my vault. No more HuggingFace dependency. My translation API serves 12,000 requests per hour from models I OWN, stored on infrastructure I trust.",
+    quote: "I downloaded all 3,500+ WindyTranslate models to my vault. No more HuggingFace dependency. My translation API serves 12,000 requests per hour from models I OWN, stored on infrastructure I trust.",
     author: "Alex Kim",
     role: "AI Engineer • Translation API startup",
     avatar: "👨‍💻",
