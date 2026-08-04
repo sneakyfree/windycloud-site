@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
+// The Cloud console. This site is the marketing hero at the apex.
+const APP_URL = 'https://cloud.windycloud.com';
+
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -51,6 +54,12 @@ export default function Navigation() {
                 {link.name}
               </a>
             ))}
+            <a
+              href={APP_URL}
+              className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+            >
+              Sign In
+            </a>
             <motion.a
               href="#pricing"
               className="px-5 py-2 bg-gradient-to-r from-windy-blue to-windy-darkblue text-white rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-windy-blue/30 transition-all duration-300"
@@ -94,6 +103,13 @@ export default function Navigation() {
                 {link.name}
               </a>
             ))}
+            <a
+              href={APP_URL}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-2 text-gray-400 hover:text-white transition-colors duration-200"
+            >
+              Sign In
+            </a>
             <a
               href="#pricing"
               onClick={() => setIsMobileMenuOpen(false)}
