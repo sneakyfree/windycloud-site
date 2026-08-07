@@ -11,12 +11,12 @@ const securityFeatures = [
   {
     icon: "🌐",
     title: "Global Edge Network",
-    description: "250+ data centers worldwide. DDoS protection. Sub-50ms latency anywhere on Earth. Your data is fast AND fortress-protected. Enterprise-grade infrastructure."
+    description: "Built on Cloudflare's global network — hundreds of edge locations, DDoS protection included, and no charge for getting your data back out."
   },
   {
     icon: "🕵️",
-    title: "We Can't Read Your Data",
-    description: "Not 'we don't.' We CAN'T. Zero-knowledge encryption means your keys live on your devices, not our servers. Even a breach reveals nothing."
+    title: "We Don't Look At Your Data",
+    description: "We never sell it, mine it, or train models on it. Access is scoped to your identity, and every access is logged. We hold the encryption keys today — client-held keys are on the roadmap, and we will not claim them until they ship."
   },
   {
     icon: "🔑",
@@ -25,8 +25,8 @@ const securityFeatures = [
   },
   {
     icon: "🛡️",
-    title: "Enterprise Compliance",
-    description: "SOC 2 Type II. GDPR. CCPA. HIPAA-ready for healthcare. When hospitals trust us with patient voice data, you can trust us with yours."
+    title: "Your Rights, Built In",
+    description: "GDPR and CCPA rights are implemented, not promised: export everything you have stored in one request, and delete it for good. Formal SOC 2 and HIPAA audits are not complete, and we will publish them here when they are."
   },
   {
     icon: "📊",
