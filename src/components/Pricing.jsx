@@ -2,6 +2,18 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 
+// The console owns checkout — it holds the signed-in session, and it proxies to
+// the account-server, which owns the ONE Stripe integration. This page never
+// touches Stripe. `plan` + `cycle` let the console send someone straight there
+// instead of making them find the same button a second time.
+const CONSOLE_URL = 'https://cloud.windycloud.com';
+
+function checkoutHref(plan, billing) {
+  if (plan.tier === 'hurricane') return 'mailto:support@windycloud.com?subject=Windy%20Hurricane%20enquiry';
+  if (plan.tier === 'free') return `${CONSOLE_URL}/login`;
+  return `${CONSOLE_URL}/billing?plan=${plan.tier}&cycle=${billing}`;
+}
+
 // ─── The ONE ecosystem ladder ──────────────────────────────────────────────
 //
 // Source of truth: windy-pro/docs/PRICING-TIERS.md (locked 2026-08-06,
@@ -257,17 +269,18 @@ function PricingCard({ plan, index, billing }) {
         ))}
       </ul>
 
-      <motion.button
+      <motion.a
+        href={checkoutHref(plan, billing)}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className={`w-full py-3.5 rounded-xl font-semibold transition-all duration-300 ${
+        className={`block text-center w-full py-3.5 rounded-xl font-semibold transition-all duration-300 ${
           plan.highlighted
             ? 'bg-gradient-to-r from-windy-blue to-windy-darkblue text-white cta-glow'
             : 'border-2 border-windy-blue/30 text-windy-blue hover:bg-windy-blue/10 hover:border-windy-blue/50'
         }`}
       >
         {plan.cta}
-      </motion.button>
+      </motion.a>
     </motion.div>
   );
 }
