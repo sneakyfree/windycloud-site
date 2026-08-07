@@ -17,11 +17,11 @@ const faqs = [
   },
   {
     question: "Is my data actually private?",
-    answer: "We use zero-knowledge encryption. Your keys live on YOUR devices, not our servers. Even if someone breached our entire infrastructure, they'd find encrypted noise — not your voice models, not your soul files, not your transcriptions. We can't read your data. That's not a policy. It's the architecture."
+    answer: "Your files are encrypted in transit (TLS) and encrypted at rest on Cloudflare R2. Access is scoped to your identity — no other customer can reach your data, and we never sell it, mine it or train on it. To be straight with you about what we do NOT yet offer: we hold the encryption keys, so this is not end-to-end or zero-knowledge encryption. Client-held keys are on our roadmap, and we will say so here the day it ships rather than before."
   },
   {
     question: "How much storage do I really need?",
-    answer: "Breeze (100 GB) works for casual WindyWord users and a few voice models. Gale (250 GB) is ideal for creators with a WindyClone avatar, multiple language model packs, and growing transcription archives — this is where most users land. Tempest (1 TB) suits power users with full model vaults, team clone data, and years of transcription history. Tornado (10 TB) is for those with years of video, voice, and clone data."
+    answer: "Most people need far less than they expect. Free (500 MB) holds a few hours of transcripts. Windy Pro (5 GB) covers everyday dictation. Windy Ultra (25 GB) suits regular use across languages, and Windy Max (100 GB) is where creators with a WindyClone avatar and model packs land — this is where most paid users sit. Above that, Tempest (1 TB) and Tornado (2 TB) are for archives of video, voice and clone data built up over years. You can move between plans at any time, so start smaller than you think."
   },
   {
     question: "What happens if I cancel?",
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     question: "What about enterprise and teams?",
-    answer: "Business plans include team collaboration for up to 10 seats with shared storage and centralized billing. Enterprise gets unlimited everything — dedicated infrastructure, on-premise deployment, custom SLAs, white-label options, and SOC 2 / HIPAA compliance for regulated industries."
+    answer: "Windy Hurricane is our contract plan — storage sized to your organisation, priced and supported per agreement. Talk to us and we will scope it with you. We would rather tell you honestly what we can commit to today than publish a feature list we have not built: shared team seats, on-premise deployment and formal compliance audits are not available yet."
   }
 ];
 
