@@ -121,7 +121,7 @@ export default function FAQ() {
         >
           <p className="text-gray-500 mb-4">Still have questions?</p>
           <a
-            href="mailto:support@windycloud.com"
+            href="mailto:support@windyword.ai"
             className="inline-block px-6 py-3 border border-windy-blue/30 text-windy-blue rounded-xl font-semibold hover:bg-windy-blue/10 hover:border-windy-blue/50 transition-all duration-300 text-sm"
           >
             Talk to a Human

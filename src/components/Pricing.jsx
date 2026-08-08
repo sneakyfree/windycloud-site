@@ -9,7 +9,7 @@ import { useRef, useState } from 'react';
 const CONSOLE_URL = 'https://cloud.windycloud.com';
 
 function checkoutHref(plan, billing) {
-  if (plan.tier === 'hurricane') return 'mailto:support@windycloud.com?subject=Windy%20Hurricane%20enquiry';
+  if (plan.tier === 'hurricane') return 'mailto:support@windyword.ai?subject=Windy%20Hurricane%20enquiry';
   if (plan.tier === 'free') return `${CONSOLE_URL}/login`;
   return `${CONSOLE_URL}/billing?plan=${plan.tier}&cycle=${billing}`;
 }

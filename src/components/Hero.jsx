@@ -67,7 +67,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Claim Your Vault — Free for 14 Days
+              Claim Your Vault — Start Free
             </motion.a>
             <motion.a
               href="#ecosystem"
