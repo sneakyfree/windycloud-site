@@ -45,12 +45,12 @@ export default function FinalCTA() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Claim Your Vault — Free for 14 Days
+              Claim Your Vault — Start Free
             </motion.a>
           </div>
 
           <p className="text-gray-600 text-sm">
-            No credit card required • 14-day free trial • Cancel anytime
+            Free plan, no credit card • Upgrade when you're ready • Cancel anytime
           </p>
 
           {/* Social proof nudge */}
